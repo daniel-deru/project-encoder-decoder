@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Codystar&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    
+}
+
+:root {
+    --brightGreen: rgb(0, 255, 0);
+    --primary:rgb(0, 0, 0);
+    --secondary: rgb(0, 200, 0);
+    --primary2: rgb(46, 46, 46);
+    --secondary2:  rgba(0, 255, 0, .5);
+}
+
+body {
+    height: fit-content;
+    width: 100vw;
+    overflow-x: hidden;
+    background: var(--primary);
+    font-size: 2em;
+    text-align: center;
+}
+
+header {
+    position: sticky;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav{ 
+    width: 100%;
+    position: relative;
+    padding: 15px 0px;
+    height: 6rem;
+    width: fit-content;
+    display: flex;
+    background:  var(--primary);
+    align-content: center;
+    /* justify-content: center */
+}
+
+nav > div {
+    color: var(--secondary);
+    width: 200px;
+}
+
+#name h4{
+    padding: 5px;
+    border-radius: 10px;
+    border: 3px outset var(--secondary);
+    margin: 1.5rem;
+    color: var(--secondary);
+    font-family: "Codystar", cursive;
+   
+    animation: flickr 1s linear infinite alternate;
+}
+
+#help {
+    user-select: none;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    width: 50px;
+    height: 50px;
+    color: var(--secondary);
+    border: 3px outset var(--secondary);
+    border-radius: 50%;
+    padding: 5px;
+    font-family: sans-serif;
+    animation: scale 1s ease-in-out infinite alternate;
+}
+
+#help:active {
+    color: var(--brightGreen);
+   border: 3px inset var(--secondary);
+}
+
+#scramble-button {
+    user-select: none;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 3px outset rgba(0, 225, 0, 1);
+    font-family: sans-serif;
+    font-size: 1em;
+    color: rgba(0, 200, 0, 1);
+    background: var(--primary);
+    padding: 5px;
+    outline: none;
+}
+
+#scramble-button:active {
+    border: 3px inset rgba(0, 255, 0, 1);
+    color: rgba(0, 255, 0, 1);
+}
+
+
+
+ul{
+    position: relative;
+    margin: 0;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+ul li{
+    position: relative;
+    background: black;
+    width: 0px;
+    overflow: hidden;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+    outline: none;
+}
+
+ul li a {
+    text-decoration: none;
+    color: var(--secondary);
+}
+
+ul li:nth-child(1){
+    transition: 0.2s;
+}
+ul li:nth-child(2){
+    transition: .2s .1s ;
+}
+ul li:nth-child(3){
+    transition: .2s .2s;
+}
+ul li:nth-child(4){
+    transition: .2s .3s;
+}
+ul li:nth-child(5){
+    transition: .2s .4s;
+}
+ul li:nth-child(6){
+    transition: .2s .5s;
+}
+
+ul li:hover{
+   color: var(--brightGreen);
+}
+ul li:hover::before{
+   content: "<";
+}
+ul li:hover::after{
+   content: ">";
+}
+
+#encode-decode-container , #base {
+    margin-top: 7px;
+    
+}
+#encode-decode-container span, #base span {
+    font-size: 1em;
+    cursor: pointer;
+    user-select: none;
+    border: 3px outset var(--secondary);
+    padding: 5px;
+    border-radius: 10px;
+    background: var(--primary);
+}
+
+#encode-decode-container span:active, #base span:active {
+    border: 3px inset var(--secondary);
+    color: var(--brightGreen);
+}
+
+
+
+
+#base-container ul {
+    list-style: none;
+    display: flex;
+   
+}
+
+#base-container ul li {
+    background: var(--primary);
+    outline: none;
+    border-radius: 10px;
+    border: 3px outset var(--secondary);
+    font-family: sans-serif;
+    color: var(--secondary);
+}
+
+#base-container ul li:focus {
+    color: rgb(0, 255, 0);
+    border: 3px dotted var(--brightGreen);
+}
+
+
+
+label {
+    color: var(--secondary);
+    font-family: sans-serif;
+}
+
+#container {
+    position: relative;
+    width: 90%;
+    text-align: center;
+    margin: 50px auto 5px auto;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr ;
+    grid-template-rows: 1fr ;
+}
+
+input {
+    position: relative;
+    width: fit-content;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 2px dotted rgba(0, 255, 0, .3);
+    font-weight: bolder;
+    font-family: sans-serif;
+    outline: none;
+    color: var(--secondary);
+    font-size: .8em;
+    padding: 5px;
+    background-color: var(--primary);
+}
+
+input:focus {
+    border: 2px dotted rgba(0, 255, 0, .8);
+}
+
+input::placeholder {
+  font-family: 'Codystar', cursive;
+    text-align: center;
+    font-size: .8em; 
+    font-weight: bolder;
+    color: var(--secondary2);
+ }
+
+textarea {
+    justify-self: right;
+    resize: none;
+    overflow: hidden;
+    display: block;
+    border-radius: 10px;
+    margin: 10px 0;
+    border: 2px dotted rgba(0, 255, 0, .3);
+    font-weight: bolder;
+    /* font-family: 'Codystar', cursive; */
+    font-family: sans-serif;
+    outline: none;
+    color: var(--secondary);
+    font-size: .8em;
+    padding: 5px;
+    background-color: var(--primary);
+}
+
+textarea:focus {
+    border: 2px dotted rgba(0, 255, 0, .8);
+}
+
+textarea::placeholder {
+      font-family: 'Codystar', cursive;
+    text-align: center;
+    font-size: .8em; 
+    font-weight: bolder;
+    color: var(--secondary2);
+ }
+
+
+ 
+#result{
+    margin-left: 10px;
+    width: 90%;
+    text-align: left;
+}
+
+#result span {
+    font-family: "Codystar", cursive;
+    display: block;
+    color: var(--secondary);
+    width: 0;
+    overflow: hidden;
+    transition: 5s 0.8s;
+}
+
+#result p{
+    display: block;
+    width: 0;
+    overflow: hidden;
+  
+}
+
+#morse {
+    font-family: sans-serif;
+    overflow: hidden;
+    width: 0;
+    margin: 20px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    text-align: justify;
+    font-size: 1em;
+    color: var(--secondary);
+    transition: 5s 1.6s linear;
+}
+
+@keyframes retro {
+    from {
+        width: 0;
+        overflow: hidden;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+@keyframes flickr {
+    from {
+        /* border: 3px outset var(--secondary2); */
+        color: var(--secondary2);
+    }
+    to {
+        /* border: 3px outset var(--brightGreen); */
+        color: var(--brightGreen)
+    }
+}
+
+@keyframes scale {
+    from {
+       transform: scale(1);
+    }
+    to {
+        transform: scale(1.1);
+    }
+}
